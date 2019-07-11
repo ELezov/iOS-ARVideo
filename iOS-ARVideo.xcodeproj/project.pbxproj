@@ -12,6 +12,9 @@
 		33421CF122A56CA900FE81AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33421CEF22A56CA900FE81AB /* Main.storyboard */; };
 		33421CF322A56CAB00FE81AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33421CF222A56CAB00FE81AB /* Assets.xcassets */; };
 		33421CF622A56CAB00FE81AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33421CF422A56CAB00FE81AB /* LaunchScreen.storyboard */; };
+		33421CFE22A56CCB00FE81AB /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 33421CFD22A56CCB00FE81AB /* art.scnassets */; };
+		33A6807F22A5B5CA0093B679 /* Uni.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 33A6807E22A5B5CA0093B679 /* Uni.mp4 */; };
+		33EBBF0F22D74E28008AB54E /* AVPlayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBBF0E22D74E28008AB54E /* AVPlayer+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		33421CF222A56CAB00FE81AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33421CF522A56CAB00FE81AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33421CF722A56CAB00FE81AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33421CFD22A56CCB00FE81AB /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		33A6807E22A5B5CA0093B679 /* Uni.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Uni.mp4; sourceTree = "<group>"; };
+		33EBBF0E22D74E28008AB54E /* AVPlayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,33 @@
 		33421CEA22A56CA900FE81AB /* iOS-ARVideo */ = {
 			isa = PBXGroup;
 			children = (
+				33EBBF0D22D74E17008AB54E /* Core */,
+				33421CFF22A56CD200FE81AB /* Resources */,
 				33421CEB22A56CA900FE81AB /* AppDelegate.swift */,
 				33421CED22A56CA900FE81AB /* ViewController.swift */,
-				33421CEF22A56CA900FE81AB /* Main.storyboard */,
-				33421CF222A56CAB00FE81AB /* Assets.xcassets */,
 				33421CF422A56CAB00FE81AB /* LaunchScreen.storyboard */,
-				33421CF722A56CAB00FE81AB /* Info.plist */,
+				33421CEF22A56CA900FE81AB /* Main.storyboard */,
 			);
 			path = "iOS-ARVideo";
+			sourceTree = "<group>";
+		};
+		33421CFF22A56CD200FE81AB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				33A6807E22A5B5CA0093B679 /* Uni.mp4 */,
+				33421CFD22A56CCB00FE81AB /* art.scnassets */,
+				33421CF222A56CAB00FE81AB /* Assets.xcassets */,
+				33421CF722A56CAB00FE81AB /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		33EBBF0D22D74E17008AB54E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				33EBBF0E22D74E28008AB54E /* AVPlayer+Extensions.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +148,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				33421CF622A56CAB00FE81AB /* LaunchScreen.storyboard in Resources */,
+				33421CFE22A56CCB00FE81AB /* art.scnassets in Resources */,
+				33A6807F22A5B5CA0093B679 /* Uni.mp4 in Resources */,
 				33421CF322A56CAB00FE81AB /* Assets.xcassets in Resources */,
 				33421CF122A56CA900FE81AB /* Main.storyboard in Resources */,
 			);
@@ -135,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33EBBF0F22D74E28008AB54E /* AVPlayer+Extensions.swift in Sources */,
 				33421CEE22A56CA900FE81AB /* ViewController.swift in Sources */,
 				33421CEC22A56CA900FE81AB /* AppDelegate.swift in Sources */,
 			);
@@ -284,7 +312,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8FX7X5MR74;
-				INFOPLIST_FILE = "iOS-ARVideo/Info.plist";
+				INFOPLIST_FILE = "iOS-ARVideo/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +331,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8FX7X5MR74;
-				INFOPLIST_FILE = "iOS-ARVideo/Info.plist";
+				INFOPLIST_FILE = "iOS-ARVideo/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
