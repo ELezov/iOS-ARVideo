@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		33421CEC22A56CA900FE81AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33421CEB22A56CA900FE81AB /* AppDelegate.swift */; };
-		33421CEE22A56CA900FE81AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33421CED22A56CA900FE81AB /* ViewController.swift */; };
-		33421CF122A56CA900FE81AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33421CEF22A56CA900FE81AB /* Main.storyboard */; };
+		33421CEE22A56CA900FE81AB /* LiveCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33421CED22A56CA900FE81AB /* LiveCameraViewController.swift */; };
+		33421CF122A56CA900FE81AB /* LiveCameraView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33421CEF22A56CA900FE81AB /* LiveCameraView.storyboard */; };
 		33421CF322A56CAB00FE81AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33421CF222A56CAB00FE81AB /* Assets.xcassets */; };
 		33421CF622A56CAB00FE81AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33421CF422A56CAB00FE81AB /* LaunchScreen.storyboard */; };
+		337336FF233F6241003129BF /* ARKitSceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337336FE233F6241003129BF /* ARKitSceneManager.swift */; };
 		33A6807F22A5B5CA0093B679 /* Uni.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 33A6807E22A5B5CA0093B679 /* Uni.mp4 */; };
 		33EBBF0F22D74E28008AB54E /* AVPlayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBBF0E22D74E28008AB54E /* AVPlayer+Extensions.swift */; };
 /* End PBXBuildFile section */
@@ -19,11 +20,12 @@
 /* Begin PBXFileReference section */
 		33421CE822A56CA900FE81AB /* iOS-ARVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-ARVideo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33421CEB22A56CA900FE81AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		33421CED22A56CA900FE81AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		33421CF022A56CA900FE81AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		33421CED22A56CA900FE81AB /* LiveCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCameraViewController.swift; sourceTree = "<group>"; };
+		33421CF022A56CA900FE81AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LiveCameraView.storyboard; sourceTree = "<group>"; };
 		33421CF222A56CAB00FE81AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33421CF522A56CAB00FE81AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33421CF722A56CAB00FE81AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		337336FE233F6241003129BF /* ARKitSceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitSceneManager.swift; sourceTree = "<group>"; };
 		33A6807E22A5B5CA0093B679 /* Uni.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Uni.mp4; sourceTree = "<group>"; };
 		33EBBF0E22D74E28008AB54E /* AVPlayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,12 +60,9 @@
 		33421CEA22A56CA900FE81AB /* iOS-ARVideo */ = {
 			isa = PBXGroup;
 			children = (
+				337336FA233F619C003129BF /* App */,
 				33EBBF0D22D74E17008AB54E /* Core */,
 				33421CFF22A56CD200FE81AB /* Resources */,
-				33421CEB22A56CA900FE81AB /* AppDelegate.swift */,
-				33421CED22A56CA900FE81AB /* ViewController.swift */,
-				33421CF422A56CAB00FE81AB /* LaunchScreen.storyboard */,
-				33421CEF22A56CA900FE81AB /* Main.storyboard */,
 			);
 			path = "iOS-ARVideo";
 			sourceTree = "<group>";
@@ -71,6 +70,7 @@
 		33421CFF22A56CD200FE81AB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				33421CF422A56CAB00FE81AB /* LaunchScreen.storyboard */,
 				33A6807E22A5B5CA0093B679 /* Uni.mp4 */,
 				33421CF222A56CAB00FE81AB /* Assets.xcassets */,
 				33421CF722A56CAB00FE81AB /* Info.plist */,
@@ -78,10 +78,45 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		33EBBF0D22D74E17008AB54E /* Core */ = {
+		337336FA233F619C003129BF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				337336FC233F61E8003129BF /* LiveCameraView */,
+				33421CEB22A56CA900FE81AB /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		337336FB233F61B2003129BF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				33EBBF0E22D74E28008AB54E /* AVPlayer+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		337336FC233F61E8003129BF /* LiveCameraView */ = {
+			isa = PBXGroup;
+			children = (
+				33421CEF22A56CA900FE81AB /* LiveCameraView.storyboard */,
+				33421CED22A56CA900FE81AB /* LiveCameraViewController.swift */,
+			);
+			path = LiveCameraView;
+			sourceTree = "<group>";
+		};
+		337336FD233F621D003129BF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				337336FE233F6241003129BF /* ARKitSceneManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		33EBBF0D22D74E17008AB54E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				337336FD233F621D003129BF /* Managers */,
+				337336FB233F61B2003129BF /* Extensions */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -147,7 +182,7 @@
 				33421CF622A56CAB00FE81AB /* LaunchScreen.storyboard in Resources */,
 				33A6807F22A5B5CA0093B679 /* Uni.mp4 in Resources */,
 				33421CF322A56CAB00FE81AB /* Assets.xcassets in Resources */,
-				33421CF122A56CA900FE81AB /* Main.storyboard in Resources */,
+				33421CF122A56CA900FE81AB /* LiveCameraView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,7 +194,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				33EBBF0F22D74E28008AB54E /* AVPlayer+Extensions.swift in Sources */,
-				33421CEE22A56CA900FE81AB /* ViewController.swift in Sources */,
+				33421CEE22A56CA900FE81AB /* LiveCameraViewController.swift in Sources */,
+				337336FF233F6241003129BF /* ARKitSceneManager.swift in Sources */,
 				33421CEC22A56CA900FE81AB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,12 +203,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		33421CEF22A56CA900FE81AB /* Main.storyboard */ = {
+		33421CEF22A56CA900FE81AB /* LiveCameraView.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				33421CF022A56CA900FE81AB /* Base */,
 			);
-			name = Main.storyboard;
+			name = LiveCameraView.storyboard;
 			sourceTree = "<group>";
 		};
 		33421CF422A56CAB00FE81AB /* LaunchScreen.storyboard */ = {
